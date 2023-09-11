@@ -9,8 +9,6 @@ import {
     Typography,
 } from "@mui/material";
 
-import * as styles from "@/styles/styles";
-
 export const getStaticProps = async () => {
     const allYears = getAllYears([
         "id",
@@ -62,30 +60,13 @@ export default function Home({allYears}: Props) {
                         Página inspirada na página de resumos de LEIC-A do técnico.
                     </Typography>
                 </Container>
-                <Container maxWidth="lg">
-                    <Stack spacing={4}>
+                <Container maxWidth="xl" sx={(theme) => ( { })}>
+                    <Stack spacing={10}>
                         {listYears}
                     </Stack>
                 </Container>
         </HomePageLayout>
         </main>
-    {/*  <div className='home-page-container'>*/}
-    {/*    <div className='hero'>*/}
-    {/*      <h1>Resumos MIEI</h1>*/
-    }
-    {/*      <p>Bem-vindo ao sítio ‘web’ comunitário de resumos de MIEI.</p>*/
-    }
-    {/*      <p>Página inspirada na página de resumos de LEIC-A do técnico.</p>*/
-    }
-    {/*    </div>*/
-    }
-    {/*    <div style={{ marginTop: 50 }}>*/
-    }
-    {/*        {listYears}*/
-    }
-    {/*    </div>*/
-    }
-    {/*</div>*/}
 </>
 )
 }

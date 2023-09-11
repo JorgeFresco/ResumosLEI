@@ -51,7 +51,7 @@ semesters:
           ects: 3
           link: '/CTCT'
           image: "assets/ctct.svg"
-          color: '#c9b740'
+          color: '#5e5c5c'
           long: true
         
 ---
