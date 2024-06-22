@@ -5,13 +5,14 @@ import {
     CssBaseline,
     Toolbar,
     IconButton,
-    Box, PaletteMode,
+    Box, PaletteMode, Link,
 } from "@mui/material";
 import {ThemeProvider, createTheme} from "@mui/material/styles";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import HomeIcon from '@mui/icons-material/Home';
 import {useRouter} from "next/router";
+import getPalette from "@/styles/PaletteThemes";
 
 const ColorModeContext = createContext({
     toggleColorMode: () => {
@@ -21,9 +22,11 @@ const ColorModeContext = createContext({
 type HomePageLayoutProps = {
     children: ReactNode
 }
-export default function HomePageLayout({children}: HomePageLayoutProps) {
+
+export default function Layout({children}: HomePageLayoutProps) {
     const router = useRouter();
     const [mode, setMode] = useState<PaletteMode>("dark");
+
     const colorMode = useMemo(
         () => ({
             toggleColorMode: () => {
@@ -35,11 +38,7 @@ export default function HomePageLayout({children}: HomePageLayoutProps) {
 
     const theme = useMemo(
         () =>
-            createTheme({
-                palette: {
-                    mode,
-                },
-            }),
+            createTheme(getPalette(mode)),
         [mode]
     );
 
@@ -47,12 +46,13 @@ export default function HomePageLayout({children}: HomePageLayoutProps) {
         <ColorModeContext.Provider value={colorMode}>
             <ThemeProvider theme={theme}>
                 <CssBaseline/>
-                <AppBar position="relative">
-                    <Toolbar>
+                <AppBar position="sticky" sx={{ bgcolor: "appbar.background", color: "appbar.text"}}>
+                    <Toolbar sx={{ bgcolor: "appbar.background", color: "appbar.text"}}>
                         <IconButton edge="start" onClick={() => router.push("/")}>
-                            <HomeIcon fontSize="large" />
+                            <HomeIcon fontSize="large" sx={{color: "appBar.home"}}/>
                         </IconButton>
                         <Typography variant="h6" sx={{ flexGrow: 1 }}>Resumos MIEI</Typography>
+                        <Link color="text.link" href="/about">Sobre</Link>
                         <Box ml={5}>
                             {theme.palette.mode === "dark" ? "Dark Mode" : "Light Mode"}
                             <IconButton

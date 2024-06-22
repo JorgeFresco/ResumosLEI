@@ -44,7 +44,7 @@ semesters:
         ects: 9
         link: '/TC'
         image: "assets/tc.svg"
-        color: '#cdd618'
+        color: '#10ad90'
     - name: '2º Trimestre'
       courses:
         - name: "SSTD"
