@@ -1,11 +1,11 @@
-import {ReactNode, useMemo, useState, createContext} from "react";
+import React, {ReactNode, useMemo, useState, createContext} from "react";
 import {
     Typography,
     AppBar,
     CssBaseline,
     Toolbar,
     IconButton,
-    Box, PaletteMode, Link,
+    Box, PaletteMode, Link, Button,
 } from "@mui/material";
 import {ThemeProvider, createTheme} from "@mui/material/styles";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
@@ -52,7 +52,7 @@ export default function Layout({children}: HomePageLayoutProps) {
                             <HomeIcon fontSize="large" sx={{color: "appBar.home"}}/>
                         </IconButton>
                         <Typography variant="h6" sx={{ flexGrow: 1 }}>Resumos MIEI</Typography>
-                        <Link color="text.link" href="/about">Sobre</Link>
+                        <Button sx={{color: "text.link"}} onClick={() => router.push("/about")}>Sobre</Button>
                         <Box ml={5}>
                             {theme.palette.mode === "dark" ? "Dark Mode" : "Light Mode"}
                             <IconButton
@@ -70,6 +70,12 @@ export default function Layout({children}: HomePageLayoutProps) {
                     </Toolbar>
                 </AppBar>
                 {children}
+                {/* Footer Section */}
+                <Box sx={{ bgcolor: 'background.paper', p: 3, borderTop: '1px solid #4e4e4e' }}>
+                    <Typography variant="body2" color="textSecondary" align="center">
+                        Site criado por <Link color="text.link" href="https://github.com/JorgeFresco" target="_blank">Jorge Fresco</Link> ️
+                    </Typography>
+                </Box>
             </ThemeProvider>
         </ColorModeContext.Provider>)
 }

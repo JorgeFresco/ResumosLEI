@@ -1,16 +1,43 @@
 import Head from "next/head";
+import React from "react";
+import {Container, Link, Paper, Typography} from "@mui/material";
 
 export default function About() {
     return (
         <>
             <Head>
-                <title>Ninja List | About</title>
+                <title>Resumos LEI</title>
+                <meta name="viewport" content="width=device-width, initial-scale=0.80"/>
+                <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div>
-                <h1>About</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum aspernatur unde quos dolore! Voluptatem fugit quod numquam ut tempore omnis ratione laudantium error aliquam. Officia expedita fugit molestiae nemo commodi?</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat at officia sed qui deleniti, beatae non ad, illum laborum, aperiam commodi libero quam! Odio possimus dolore qui similique itaque sunt.</p>
-            </div>
+
+            <Container maxWidth="xl" sx={(theme) => ({
+                padding: theme.spacing(8, 0, 8),
+            })}>
+                <Typography variant="h2" align="center" color="textPrimary" gutterBottom sx={{fontWeight: "bold"}}>Sobre</Typography>
+                <Typography variant="body1" color="textSecondary" align="center" paragraph>Todo o conteúdo disponível neste site foi criado por <u>alunos para alunos</u>.</Typography>
+                <Typography variant="body1" color="textSecondary" align="center" paragraph>O objetivo é permitir um acesso mais fácil e rápido à informação de cada cadeira e, ao mesmo tempo, permitir a alunos partilharem o seu material de estudo (resumos, notas, cheat sheets, etc).</Typography>
+                <Typography variant="body1" color="textSecondary" align="center" paragraph></Typography>
+            </Container>
+            <Container maxWidth="lg">
+                <Paper elevation={1} sx={{ padding: 3, mt: 6,mb: 6, color: "text.warning", bgcolor: "background.warning"}}>
+                    <Typography variant="h6" align="center" gutterBottom>
+                        DISCLAIMER
+                    </Typography>
+                    <Typography variant="body1" color="textSecondary" align="center" paragraph>
+                        Este site não está afiliado à <Link color="text.link" href="https://www.fct.unl.pt/" target="_blank">NOVA FCT</Link> de forma alguma
+                        e foi inspirado no site de resumos de <Link color="text.link" href="https://resumos.leic.pt/" target="_blank">LEIC-A</Link> do técnico,
+                        criado por <Link color="text.link" href="https://diogotc.com/" target="_blank"> Diogo Correira</Link>.
+                    </Typography>
+                    <Typography variant="body1" color="textSecondary" align="center" paragraph>
+                        Algum do conteúdo neste site pode estar incorreto, incompleto e/ou desatualizado, por isso tenham sempre atenção e confirmem a informação antes de assumirem que está tudo correto.
+                    </Typography>
+                    <Typography variant="body1" color="textSecondary" align="center" paragraph>
+                        Em caso de qualquer dúvida ou erro que encontrem, podem enviar email para <Link color="text.link" href="mailto:resumoslei@gmail.com">resumoslei@gmail.com</Link>.
+                    </Typography>
+                </Paper>
+            </Container>
+
         </>
     );
 }

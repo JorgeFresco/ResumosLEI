@@ -28,28 +28,8 @@ hr {
     border-top: 1px solid #4e4e4e;
 }
 
-h4 {
-    border-bottom: 1px solid #4e4e4e;
-}
-
 button {
     font-family: inherit;
-}
-
-
-.home-page-container {
-    width: clamp(100px, 90%, 900px);
-    margin: 70px auto 0 auto;
-}
-
-.hero {
-    text-align: center;
-}
-
-.year-section > div {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
 }
 
 .semester-section {
@@ -65,7 +45,6 @@ button {
 }
 
 .section-button {
-    background: #000;
     position: relative;
     padding: 0.5rem;
     border-radius: 5px;

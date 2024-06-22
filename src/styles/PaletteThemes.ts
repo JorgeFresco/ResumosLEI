@@ -25,8 +25,8 @@ const getPalette = (mode: PaletteMode) => ({
             disabledBackground: (mode === 'light' ? 'rgba(0, 0, 0, 0.12)' : 'rgba(255, 255, 255, 0.12)'),
         },
         background: {
-            default: (mode === 'light' ? '#fff' : '#212121'),
-            paper: (mode === 'light' ? '#fff' : '#212121'),
+            default: (mode === 'light' ? 'rgba(255, 255, 255, 0.5)' : '#212121'),
+            paper: (mode === 'light' ? 'rgba(255, 255, 255, 0.5)' : '#212121'),
             warning: (mode === 'light' ? 'rgba(255, 229, 100, 0.3)' : 'rgba(185, 174, 119, 0.4)')
         },
     },
