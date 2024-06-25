@@ -38,10 +38,10 @@ export default function Home({allYears}: Props) {
             <Container maxWidth="sm" sx={(theme) => ({
                 padding: theme.spacing(8, 4, 8),
             })}>
-                <Typography variant="h2" align="center" color="textPrimary" gutterBottom sx={{fontWeight: "bold"}}>
+                <Typography variant="h3" align="center" color="textPrimary" gutterBottom sx={{fontWeight: "bold"}}>
                     Resumos LEI
                 </Typography>
-                <Typography variant="h5" align="center" color="textSecondary" paragraph>
+                <Typography variant="h6" align="center" color="textSecondary" paragraph>
                     Bem-vindo ao site comunitário de resumos de LEI.
                 </Typography>
             </Container>

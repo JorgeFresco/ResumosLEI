@@ -17,7 +17,7 @@ export default function YearSection( { year, index }: YearSectionProps) {
                     expandIcon={<ExpandMoreIcon />}
                 >
                     <Typography
-                        variant="h4"
+                        variant="h5"
                         color="textPrimary"
                     >
                         {name}
@@ -26,7 +26,7 @@ export default function YearSection( { year, index }: YearSectionProps) {
                 <AccordionDetails sx={{display: "flex", flexWrap: "wrap", paddingBottom: "3rem"}} key={index}>
                         {semesters.map(({name, courses}, index) => (
                             <div className="semester-section" key={index}>
-                                <h3>{name}</h3>
+                                <Typography variant="h6" gutterBottom>{name}</Typography>
                                 <div className='section-button-layout'>
                                     {courses.map(({name, ects, link, image, color, long}) => (
                                         <SectionButton

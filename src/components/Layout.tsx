@@ -5,7 +5,7 @@ import {
     CssBaseline,
     Toolbar,
     IconButton,
-    Box, PaletteMode, Link, Button,
+    Box, PaletteMode, Link, Button, Divider,
 } from "@mui/material";
 import {ThemeProvider, createTheme} from "@mui/material/styles";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
@@ -46,19 +46,18 @@ export default function Layout({children}: HomePageLayoutProps) {
         <ColorModeContext.Provider value={colorMode}>
             <ThemeProvider theme={theme}>
                 <CssBaseline/>
-                <AppBar position="sticky" sx={{ bgcolor: "appbar.background", color: "appbar.text"}}>
-                    <Toolbar sx={{ bgcolor: "appbar.background", color: "appbar.text"}}>
+                <AppBar position="sticky">
+                    <Toolbar>
                         <IconButton edge="start" onClick={() => router.push("/")}>
-                            <HomeIcon fontSize="large" sx={{color: "appBar.home"}}/>
+                            <HomeIcon fontSize="large" sx={{color: "appbar.home"}}/>
                         </IconButton>
                         <Typography variant="h6" sx={{ flexGrow: 1 }}>Resumos MIEI</Typography>
-                        <Button sx={{color: "text.link"}} onClick={() => router.push("/about")}>Sobre</Button>
+                        <Button sx={{color: "text.link", transition: "color 0s"}} onClick={() => router.push("/about")}>Sobre</Button>
                         <Box ml={5}>
                             {theme.palette.mode === "dark" ? "Dark Mode" : "Light Mode"}
                             <IconButton
-                                sx={{ml: 1}}
+                                sx={{ml: 0.5}}
                                 onClick={colorMode.toggleColorMode}
-                                color="inherit"
                             >
                                 {theme.palette.mode === "dark" ? (
                                     <Brightness7Icon/>
@@ -71,7 +70,8 @@ export default function Layout({children}: HomePageLayoutProps) {
                 </AppBar>
                 {children}
                 {/* Footer Section */}
-                <Box sx={{ bgcolor: 'background.paper', p: 3, borderTop: '1px solid #4e4e4e' }}>
+                <Divider variant="middle"/>
+                <Box sx={{ p: 3 }}>
                     <Typography variant="body2" color="textSecondary" align="center">
                         Site criado por <Link color="text.link" href="https://github.com/JorgeFresco" target="_blank">Jorge Fresco</Link> ️
                     </Typography>
