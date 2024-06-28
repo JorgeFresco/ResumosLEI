@@ -32,7 +32,6 @@ export function getYearBySlug(slug: string, fields: string[] = []) {
             items[field] = data[field]
         }
     })
-    console.log(items)
     return items
 }
 

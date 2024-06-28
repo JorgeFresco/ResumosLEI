@@ -5,12 +5,14 @@ import {
     CssBaseline,
     Toolbar,
     IconButton,
-    Box, PaletteMode, Link, Button, Divider,
+    Box, PaletteMode, Link, Button, Divider, Menu, MenuItem, Container, Tooltip, Avatar
 } from "@mui/material";
 import {ThemeProvider, createTheme} from "@mui/material/styles";
+import MenuIcon from '@mui/icons-material/Menu';
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import HomeIcon from '@mui/icons-material/Home';
+import AdbIcon from '@mui/icons-material/Adb';
 import {useRouter} from "next/router";
 import getPalette from "@/styles/PaletteThemes";
 
@@ -26,6 +28,23 @@ type HomePageLayoutProps = {
 export default function Layout({children}: HomePageLayoutProps) {
     const router = useRouter();
     const [mode, setMode] = useState<PaletteMode>("dark");
+    const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+    const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
+
+    const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+        setAnchorElNav(event.currentTarget);
+    };
+    const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+        setAnchorElUser(event.currentTarget);
+    };
+
+    const handleCloseNavMenu = () => {
+        setAnchorElNav(null);
+    };
+
+    const handleCloseUserMenu = () => {
+        setAnchorElUser(null);
+    };
 
     const colorMode = useMemo(
         () => ({
@@ -47,26 +66,85 @@ export default function Layout({children}: HomePageLayoutProps) {
             <ThemeProvider theme={theme}>
                 <CssBaseline/>
                 <AppBar position="sticky">
-                    <Toolbar>
-                        <IconButton edge="start" onClick={() => router.push("/")}>
-                            <HomeIcon fontSize="large" sx={{color: "appbar.home"}}/>
-                        </IconButton>
-                        <Typography variant="h6" sx={{ flexGrow: 1 }}>Resumos MIEI</Typography>
-                        <Button sx={{color: "text.link", transition: "color 0s"}} onClick={() => router.push("/about")}>Sobre</Button>
-                        <Box ml={5}>
-                            {theme.palette.mode === "dark" ? "Dark Mode" : "Light Mode"}
-                            <IconButton
-                                sx={{ml: 0.5}}
-                                onClick={colorMode.toggleColorMode}
-                            >
-                                {theme.palette.mode === "dark" ? (
-                                    <Brightness7Icon/>
-                                ) : (
-                                    <Brightness4Icon/>
-                                )}
+                    <Container maxWidth="xl">
+                        <Toolbar disableGutters>
+                            <IconButton edge="start" onClick={() => router.push("/")}>
+                                <HomeIcon fontSize="large" sx={{color: "appbar.home"}}/>
                             </IconButton>
-                        </Box>
-                    </Toolbar>
+                            <Typography
+                                variant="h6"
+                                noWrap
+                                sx={{
+                                    mr: 2,
+                                    display: { xs: 'none', md: 'flex' },
+                                }}
+                            >
+                                Resumos MIEI
+                            </Typography>
+
+                            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                                <IconButton
+                                    size="large"
+                                    aria-controls="menu-appbar"
+                                    aria-haspopup="true"
+                                    onClick={handleOpenNavMenu}
+                                    color="inherit"
+                                >
+                                    <MenuIcon />
+                                </IconButton>
+                                <Menu
+                                    id="menu-appbar"
+                                    anchorEl={anchorElNav}
+                                    anchorOrigin={{
+                                        vertical: 'bottom',
+                                        horizontal: 'left',
+                                    }}
+                                    keepMounted
+                                    transformOrigin={{
+                                        vertical: 'top',
+                                        horizontal: 'left',
+                                    }}
+                                    open={Boolean(anchorElNav)}
+                                    onClose={handleCloseNavMenu}
+                                    sx={{
+                                        display: { xs: 'block', md: 'none' },
+                                    }}
+                                >
+                                        <MenuItem onClick={handleCloseNavMenu}>
+                                            <Button sx={{color: "text.link", transition: "color 0s", display: "block"}} onClick={() => router.push("/about")}>Sobre</Button>
+                                        </MenuItem>
+                                </Menu>
+                            </Box>
+                            <Typography
+                                variant="h5"
+                                noWrap
+                                sx={{
+                                    mr: 2,
+                                    display: { xs: 'flex', md: 'none' },
+                                    flexGrow: 1,
+                                }}
+                            >
+                                Resumos MIEI
+                            </Typography>
+                            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                                <Button sx={{color: "text.link", transition: "color 0s", display: "block"}} onClick={() => router.push("/about")}>Sobre</Button>
+                            </Box>
+
+                            <Box sx={{ flexGrow: 0 }}>
+                                {theme.palette.mode === "dark" ? "Dark Mode" : "Light Mode"}
+                                <IconButton
+                                    sx={{ml: 0.5}}
+                                    onClick={colorMode.toggleColorMode}
+                                >
+                                    {theme.palette.mode === "dark" ? (
+                                        <Brightness7Icon/>
+                                    ) : (
+                                        <Brightness4Icon/>
+                                    )}
+                                </IconButton>
+                            </Box>
+                        </Toolbar>
+                    </Container>
                 </AppBar>
                 {children}
                 {/* Footer Section */}
