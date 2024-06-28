@@ -1,10 +1,10 @@
 type Course = {
-    name: string
+    acronym: string
     ects: number
     link: string
     image: string
     color: string
-    long: boolean
+    long?: boolean
 }
 
 export default Course

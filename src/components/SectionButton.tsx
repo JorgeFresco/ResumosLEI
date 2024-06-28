@@ -2,7 +2,7 @@ import React from 'react';
 import Course from "@/interfaces/course";
 import Link from "next/link";
 import Image from "next/image";
-export default function SectionButton({ name, ects, link, image, color, long } : Course) {
+export default function SectionButton({ acronym, ects, link, image, color, long } : Course) {
 
     return (
         <Link
@@ -11,10 +11,10 @@ export default function SectionButton({ name, ects, link, image, color, long } :
             style={{ backgroundColor: color }}
         >
             <div className='section-button__text'>
-                <span>{name}</span>
+                <span>{acronym}</span>
                 <span>{ects} ects</span>
             </div>
-            <Image src={image} alt={name} width={100} height={100} className={"img"}/>
+            <Image src={image} alt={acronym} width={100} height={100} className={"img"}/>
         </Link>
     );
 };

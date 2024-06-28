@@ -1,12 +1,13 @@
 import {PaletteMode} from "@mui/material";
 
+
 const getPalette = (mode: PaletteMode) => ({
     palette: {
         mode,
         // palette values for light mode
         appbar: {
             home: (mode === 'light' ? '#000' : '#fff'),
-            background: (mode === 'light' ? 'rgb(169,169,169, 0.1)' : '#212121'),
+            background: (mode === 'light' ? 'rgb(169,169,169, 1)' : '#212121'),
             text: (mode === 'light' ? '#000' : '#fff'),
         },
         divider: (mode === 'light' ? 'rgba(0, 0, 0, 0.12)' : 'rgba(255, 255, 255, 0.12)'),
@@ -26,7 +27,7 @@ const getPalette = (mode: PaletteMode) => ({
         },
         background: {
             default: (mode === 'light' ? 'rgba(255, 255, 255, 0.5)' : '#212121'),
-            paper: (mode === 'light' ? 'rgb(169,169,169, 0.1)' : '#212121'),
+            paper: (mode === 'light' ? 'rgb(240,240,240)' : '#212121'),
             warning: (mode === 'light' ? 'rgba(255, 229, 100, 0.4)' : 'rgba(185, 174, 119, 0.4)')
         },
     },
@@ -34,7 +35,7 @@ const getPalette = (mode: PaletteMode) => ({
         MuiAppBar: {
             styleOverrides: {
                 root: {
-                    backgroundColor: (mode === 'light' ? 'rgb(169,169,169, 0.1)' : '#212121'),
+                    backgroundColor: (mode === 'light' ? 'rgb(240,240,240)' : '#212121'),
                     color: (mode === 'light' ? '#000' : '#fff')
                 }
             }
