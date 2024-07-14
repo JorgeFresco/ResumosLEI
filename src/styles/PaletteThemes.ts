@@ -5,6 +5,12 @@ const getPalette = (mode: PaletteMode) => ({
     palette: {
         mode,
         // palette values for light mode
+        primary: {
+            main: (mode === 'light' ? '#1757fa' : '#17b6fa'),
+        },
+        secondary: {
+            main: (mode === 'light' ? '#000' : '#fff'),
+        },
         appbar: {
             home: (mode === 'light' ? '#000' : '#fff'),
             background: (mode === 'light' ? 'rgb(169,169,169, 1)' : '#212121'),

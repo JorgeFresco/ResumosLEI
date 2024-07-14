@@ -5,20 +5,17 @@ import {
     CssBaseline,
     Toolbar,
     IconButton,
-    Box, PaletteMode, Link, Button, Divider, Menu, MenuItem, Container, Tooltip, Avatar
+    Box, PaletteMode, Link, Button, Divider, Menu, MenuItem, Container
 } from "@mui/material";
 import {ThemeProvider, createTheme} from "@mui/material/styles";
 import MenuIcon from '@mui/icons-material/Menu';
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
-import HomeIcon from '@mui/icons-material/Home';
-import AdbIcon from '@mui/icons-material/Adb';
 import {useRouter} from "next/router";
 import getPalette from "@/styles/PaletteThemes";
 
 const ColorModeContext = createContext({
-    toggleColorMode: () => {
-    }
+    toggleColorMode: () => {}
 });
 
 type HomePageLayoutProps = {
@@ -68,18 +65,17 @@ export default function Layout({children}: HomePageLayoutProps) {
                 <AppBar position="sticky">
                     <Container maxWidth="xl">
                         <Toolbar disableGutters>
-                            <IconButton edge="start" onClick={() => router.push("/")}>
-                                <HomeIcon fontSize="large" sx={{color: "appbar.home"}}/>
-                            </IconButton>
                             <Typography
                                 variant="h6"
                                 noWrap
+                                onClick={() => router.push("/")}
                                 sx={{
                                     mr: 2,
                                     display: { xs: 'none', md: 'flex' },
+                                    cursor: 'pointer'
                                 }}
                             >
-                                Resumos MIEI
+                                Resumos LEI
                             </Typography>
 
                             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -110,21 +106,23 @@ export default function Layout({children}: HomePageLayoutProps) {
                                         display: { xs: 'block', md: 'none' },
                                     }}
                                 >
-                                        <MenuItem onClick={handleCloseNavMenu}>
-                                            <Button sx={{color: "text.link", transition: "color 0s", display: "block"}} onClick={() => router.push("/about")}>Sobre</Button>
-                                        </MenuItem>
+                                    <MenuItem onClick={handleCloseNavMenu}>
+                                        <Button sx={{color: "text.link", transition: "color 0s", display: "block"}} onClick={() => router.push("/about")}>Sobre</Button>
+                                    </MenuItem>
                                 </Menu>
                             </Box>
                             <Typography
                                 variant="h5"
                                 noWrap
+                                onClick={() => router.push("/")}
                                 sx={{
                                     mr: 2,
                                     display: { xs: 'flex', md: 'none' },
                                     flexGrow: 1,
+                                    cursor: 'pointer'
                                 }}
                             >
-                                Resumos MIEI
+                                Resumos LEI
                             </Typography>
                             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                                 <Button sx={{color: "text.link", transition: "color 0s", display: "block"}} onClick={() => router.push("/about")}>Sobre</Button>
@@ -155,5 +153,6 @@ export default function Layout({children}: HomePageLayoutProps) {
                     </Typography>
                 </Box>
             </ThemeProvider>
-        </ColorModeContext.Provider>)
+        </ColorModeContext.Provider>
+    )
 }

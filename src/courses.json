@@ -7,30 +7,123 @@
           "name": "1º Semestre",
           "courses": [
             {
-              "acronym": "AM-I",
+              "name": "Análise Matemática I",
+              "acronym": "AM I",
               "ects": 6,
-              "link": "/AM-I",
+              "description": "Introdução aos principais conceitos, definições e técnicas de análise de sucessões e de funções reais de variável real.",
+              "objectives": [
+                "Trabalhar com noções elementares de topologia na recta real",
+                "Fazer pequenas demonstrações por indução matemática",
+                "Compreender a noção rigorosa de limite (de sucessões e de funções de variável real) e efectuar o seu cálculo",
+                "Compreender a noção rigorosa de continuidade de funções de variável real e respectivos resultados fundamentais",
+                "Compreender a noção rigorosa de diferenciabilidade, os teoremas de Rolle, Lagrange e Cauchy e aplicações ao cálculo de limites",
+                "Conhecer o desenvolvimento de Taylor e aplicações ao estudo de funções",
+                "Conhecer a noção de primitiva e respectivas técnicas de cálculo",
+                "Conhecer a noção de integral de Riemann, respectivas técnicas de cálculo e algumas aplicações",
+                "Ser capaz de analisar a convergência de integrais impróprios"
+              ],
+              "requirements": "O aluno deve dominar os conhecimentos matemáticos ministrados até à conclusão do ensino secundário.",
+              "program": [
+                "Topologia - Indução Matemática - Sucessões",
+                "Limites e Continuidade",
+                "Diferenciabilidade",
+                "Primitivação",
+                "Integração de Riemann"
+              ],
+              "link": "AM-I",
               "image": "assets/am1.svg",
               "color": "#139cd6"
             },
             {
+              "name": "Álgebra Linear e Geometria Analítica",
               "acronym": "ALGA",
               "ects": 6,
-              "link": "/ALGA",
+              "description": "Introdução à Álgebra Linear e Geometria Analítica",
+              "objectives": [
+                "Operar com matrizes, caracterizar as matrizes invertíveis e calcular a inversa de uma matriz invertível",
+                "Utilizar as matrizes para determinar se um sistema de equações lineares é impossível ou é possível e, neste caso, determinar o conjunto das soluções.",
+                "Representar uma aplicação linear por uma matriz e determinar, por exemplo, se a aplicação é sobrejectiva, se é injectiva, determinando a característica da matriz.",
+                "Dada uma matriz quadrada, calcular o seu determinante, os seus valores próprios e respectivos  vectores próprios associados.",
+                "Utilizar as matrizes e determinantes na Geometria Analítica em R^3, por exemplo para a determinação de uma equação geral de um plano, a determinação da posição relativa entre 2 rectas (entre 2 planos ou entre 1 recta e 1 plano)"
+              ],
+              "requirements": "Conhecimentos de Matemática correspondentes ao ensino pré-universitário português (área de ciências).",
+              "program": [
+                "Matrizes",
+                "Sistemas de Equações Lineares",
+                "Determinantes",
+                "Espaços Vectoriais",
+                "Aplicações Lineares",
+                "Valores e Vectores Próprios",
+                "Produto Interno, Produto Externo e Produto Misto de Vectores",
+                "Geometria Analítica"
+              ],
+              "link": "ALGA",
               "image": "assets/alga.svg",
               "color": "#d92316"
             },
             {
+              "name": "Introdução à Programação",
               "acronym": "IP",
               "ects": 9,
-              "link": "/IP",
+              "description": "Introdução à programação de computadores e os conceitos fundamentais da programação procedimental de base imperativa, usando objectos e classes como mecanismo de estruturação de programas.",
+              "objectives": [
+                "Compreender as várias construções de programação incluídas no fragmento coberto da linguagem Java.",
+                "Conhecer os componentes e ferramentas básicas de um ambiente de desenvolvimento de software (editor, compilador, etc) e qual a sua função.",
+                "Ler e explicar / simular mentalmente a funcionalidade de excertos de código escritos no fragmento coberto da linguagem Java",
+                "Conceber e implementar corretamente algoritmos simples.",
+                "Construir uma pequena aplicação no fragmento coberto da linguagem Java, a partir de uma especificação informal usando a metodologia definida na disciplina",
+                "Utilizar corretamente, ao nível esperado, as ferramentas de programação e saber interpretar os seus resultados (mensagens de erro, etc).",
+                "Realizar um mini-projecto de programação em grupo."
+              ],
+              "requirements": "Nenhum",
+              "program": [
+                "Computadores e programas",
+                "Objetos e operações",
+                "Classes e tipos de dados básicos",
+                "Manipulação de estado",
+                "Mecanismos de decisão",
+                "Interação (I/O)",
+                "Ciclos e introdução à recursividade",
+                "Estrutura de aplicações",
+                "Vetores e algoritmos relacionados",
+                "Iteradores",
+                "Ordenação e pesquisa",
+                "Manipulação de ficheiros",
+                "Matrizes",
+                "Aplicações com várias classes",
+                "Metodologias de desenvolvimento de software"
+              ],
+              "link": "IP",
               "image": "assets/ip.svg",
               "color": "#cf7617"
             },
             {
+              "name": "Sistemas Lógicos",
               "acronym": "SL",
               "ects": 6,
-              "link": "/SL",
+              "description": "Compreensão e aplicação de conceitos fundamentais de sistemas digitais. O objetivo é capacitar os alunos a descrever e implementar sistemas digitais através de diferentes métodos e ferramentas.",
+              "objectives": [
+                "Descrever sistemas digitais combinatórios através de expressões algébricas booleanas, tabelas de verdade e esquemáticos.",
+                "Aplicar metodologia de síntese de circuitos combinatórios.",
+                "Converter números entre diferentes bases de numeração, tais como decimal, binário, hexadecimal e octal.",
+                "Analisar métodos de decomposição modular de circuitos combinatórios, incluindo circuitos de aritmética binária.",
+                "Aplicar técnicas expeditas de desenho de contadores.",
+                "Aplicar metodologia de síntese de máquinas de estados síncronas, partindo de diagramas de estado.",
+                "Realizar sistemas digitais de reduzida/média complexidade através da sua decomposição em parte de dados e de controlo."
+              ],
+              "requirements": "Nenhum",
+              "program": [
+                "Álgebra de Boole",
+                "Funções Booleanas",
+                "Operações Aritméticas",
+                "Funções Especiais",
+                "Elementos de Memória Biestáveis",
+                "Circuitos Sequenciais",
+                "Desenho de máquinas de estado síncronas",
+                "Aplicações",
+                "Introdução a arquiteturas de transferência entre registos"
+              ],
+              "link": "SL",
               "image": "assets/sl.svg",
               "color": "#12c733"
             }
@@ -40,30 +133,50 @@
           "name": "2º Semestre",
           "courses": [
             {
+              "name": "Análise Matemática II E",
               "acronym": "AM II",
               "ects": 6,
-              "link": "/AM-II",
+              "description": "",
+              "objectives": [],
+              "requirements": "",
+              "program": [],
+              "link": "AM-II",
               "image": "assets/am2.svg",
               "color": "#1082b3"
             },
             {
+              "name": "Arquitetura de Computadores",
               "acronym": "AC",
               "ects": 9,
-              "link": "/AC",
+              "description": "",
+              "objectives": [],
+              "requirements": "",
+              "program": [],
+              "link": "AC",
               "image": "assets/ac.svg",
               "color": "#0fa82b"
             },
             {
+              "name": "Matemática Discreta",
               "acronym": "MD",
               "ects": 6,
-              "link": "/MD",
+              "description": "",
+              "objectives": [],
+              "requirements": "",
+              "program": [],
+              "link": "MD",
               "image": "assets/md.svg",
               "color": "#b31e14"
             },
             {
+              "name": "Programação Orientada pelos Objetos",
               "acronym": "POO",
               "ects": 9,
-              "link": "/POO",
+              "description": "",
+              "objectives": [],
+              "requirements": "",
+              "program": [],
+              "link": "POO",
               "image": "assets/poo.svg",
               "color": "#b56714"
             }
@@ -73,9 +186,14 @@
           "name": "2º Trimestre",
           "courses": [
             {
+              "name": "Competências Transversais para Ciências e Tecnologia",
               "acronym": "CTCT",
               "ects": 3,
-              "link": "/CTCT",
+              "description": "",
+              "objectives": [],
+              "requirements": "",
+              "program": [],
+              "link": "CTCT",
               "image": "assets/ctct.svg",
               "color": "#5e5c5c",
               "long": true
@@ -91,30 +209,50 @@
           "name": "1º Semestre",
           "courses": [
             {
+              "name": "Algoritmos e Estruturas de Dados",
               "acronym": "AED",
               "ects": 9,
-              "link": "/AED",
+              "description": "",
+              "objectives": [],
+              "requirements": "",
+              "program": [],
+              "link": "AED",
               "image": "assets/aed.svg",
               "color": "#a65e12"
             },
             {
+              "name": "Física",
               "acronym": "Fis",
               "ects": 6,
-              "link": "/Fis",
+              "description": "",
+              "objectives": [],
+              "requirements": "",
+              "program": [],
+              "link": "Fis",
               "image": "assets/fis.svg",
               "color": "#b513d6"
             },
             {
+              "name": "Fundamentos de Sistemas de Operação",
               "acronym": "FSO",
               "ects": 9,
-              "link": "/FSO",
+              "description": "",
+              "objectives": [],
+              "requirements": "",
+              "program": [],
+              "link": "FSO",
               "image": "assets/fso.svg",
               "color": "#0e9927"
             },
             {
+              "name": "Lógica Computacional",
               "acronym": "LC",
               "ects": 6,
-              "link": "/LC",
+              "description": "",
+              "objectives": [],
+              "requirements": "",
+              "program": [],
+              "link": "LC",
               "image": "assets/lc.svg",
               "color": "#13d6b2"
             }
@@ -124,30 +262,50 @@
           "name": "2º Semestre",
           "courses": [
             {
+              "name": "Bases de Dados",
               "acronym": "BD",
               "ects": 9,
-              "link": "/BD",
+              "description": "",
+              "objectives": [],
+              "requirements": "",
+              "program": [],
+              "link": "BD",
               "image": "assets/bd.svg",
               "color": "#a2d613"
             },
             {
+              "name": "Linguagens e Ambientes de Programação",
               "acronym": "LAP",
               "ects": 6,
-              "link": "/LAP",
+              "description": "",
+              "objectives": [],
+              "requirements": "",
+              "program": [],
+              "link": "LAP",
               "image": "assets/lap.svg",
               "color": "#965511"
             },
             {
-              "acronym": "PED",
+              "name": "Probabilidades e Estatística D",
+              "acronym": "PE D",
               "ects": 6,
-              "link": "/PED",
+              "description": "",
+              "objectives": [],
+              "requirements": "",
+              "program": [],
+              "link": "PE-D",
               "image": "assets/ped.svg",
               "color": "#0f77a3"
             },
             {
+              "name": "Teoria da Computação",
               "acronym": "TC",
               "ects": 9,
-              "link": "/TC",
+              "description": "",
+              "objectives": [],
+              "requirements": "",
+              "program": [],
+              "link": "TC",
               "image": "assets/tc.svg",
               "color": "#10ad90"
             }
@@ -157,9 +315,14 @@
           "name": "2º Trimestre",
           "courses": [
             {
+              "name": "Sociedade, Sustentabilidade e Transformação Digital\n",
               "acronym": "SSTD",
               "ects": 3,
-              "link": "/SSTD",
+              "description": "",
+              "objectives": [],
+              "requirements": "",
+              "program": [],
+              "link": "SSTD",
               "image": "assets/sstd.svg",
               "color": "#474747",
               "long": true
@@ -175,30 +338,50 @@
           "name": "1º Semestre",
           "courses": [
             {
+              "name": "Computação Gráfica e Interfaces",
               "acronym": "CGI",
               "ects": 6,
-              "link": "/CGI",
+              "description": "",
+              "objectives": [],
+              "requirements": "",
+              "program": [],
+              "link": "CGI",
               "image": "assets/cgi.svg",
               "color": "#bd5117"
             },
             {
+              "name": "Engenharia de Software",
               "acronym": "ES",
               "ects": 9,
-              "link": "/ES",
+              "description": "",
+              "objectives": [],
+              "requirements": "",
+              "program": [],
+              "link": "ES",
               "image": "assets/es.svg",
               "color": "#db25ba"
             },
             {
+              "name": "Inteligência Artificial",
               "acronym": "IA",
               "ects": 6,
-              "link": "/IA",
+              "description": "",
+              "objectives": [],
+              "requirements": "",
+              "program": [],
+              "link": "IA",
               "image": "assets/ia.svg",
               "color": "#cdd618"
             },
             {
+              "name": "Redes de Computadores",
               "acronym": "RC",
               "ects": 6,
-              "link": "/RC",
+              "description": "",
+              "objectives": [],
+              "requirements": "",
+              "program": [],
+              "link": "RC",
               "image": "assets/rc.svg",
               "color": "#0b7a1f"
             }
@@ -208,23 +391,38 @@
           "name": "2º Semestre",
           "courses": [
             {
+              "name": "Análise e Desenho de Algoritmos",
               "acronym": "ADA",
               "ects": 6,
-              "link": "/ADA",
+              "description": "",
+              "objectives": [],
+              "requirements": "",
+              "program": [],
+              "link": "ADA",
               "image": "assets/ada.svg",
               "color": "#78440d"
             },
             {
+              "name": "Sistemas Distribuídos",
               "acronym": "SD",
               "ects": 6,
-              "link": "/SD",
+              "description": "",
+              "objectives": [],
+              "requirements": "",
+              "program": [],
+              "link": "SD",
               "image": "assets/sd.svg",
               "color": "#5d9e0e"
             },
             {
+              "name": "Atividade de Desenvolvimento Curricular",
               "acronym": "ADC",
               "ects": 12,
-              "link": "/ADC",
+              "description": "",
+              "objectives": [],
+              "requirements": "",
+              "program": [],
+              "link": "ADC",
               "image": "assets/adc.svg",
               "color": "#333333"
             }
@@ -234,9 +432,14 @@
           "name": "2º Trimestre",
           "courses": [
             {
+              "name": "Programa de Introdução à Prática Profissional/Investigação Científica",
               "acronym": "PIPP/PIIC",
               "ects": 3,
-              "link": "/PI",
+              "description": "",
+              "objectives": [],
+              "requirements": "",
+              "program": [],
+              "link": "PI",
               "image": "assets/pi.svg",
               "color": "#333333",
               "long": true

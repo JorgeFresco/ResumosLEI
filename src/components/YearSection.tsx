@@ -28,7 +28,7 @@ export default function YearSection( { year, index }: YearSectionProps) {
                             <div className="semester-section" key={index}>
                                 <Typography variant="h6" gutterBottom>{name}</Typography>
                                 <div className='section-button-layout'>
-                                    {courses.map(({acronym, ects, link, image, color, long}) => (
+                                    {courses.map(({name, acronym, ects, description, objectives, requirements, program, link, image, color, long}) => (
                                         <SectionButton
                                             key={link}
                                             acronym={acronym}
