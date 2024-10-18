@@ -24,6 +24,7 @@ import Grid from '@mui/material/Grid2';
 import React, {SyntheticEvent, useState} from "react";
 import { useTheme } from "@mui/system";
 import Course from "@/interfaces/course";
+import Head from "next/head";
 
 type CoursePageProps = {
     course: Course;
@@ -80,150 +81,157 @@ function CoursePage({ course }: CoursePageProps) {
     }
 
     return (
-        <Container>
-            <Box padding={6} display="flex" justifyContent="center">
-                <Typography variant="h4">{course.name}</Typography>
-            </Box>
-            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <Tabs value={value} onChange={handleChange}>
-                    <Tab label="Informação Geral" />
-                    <Tab label="Objectivos" />
-                    <Tab label="Requisitos" />
-                    <Tab label="Resumos" />
-                </Tabs>
-            </Box>
-            <TabPanel value={value} index={0}>
-                {/* Content for 'Informação Geral' */}
-                <Box
-                    display="flex"
-                    flexDirection={isSmallScreen ? 'column' : 'row'}
-                    alignItems="center"
-                    textAlign={isSmallScreen ? 'center' : 'left'}
-                    justifyContent={isSmallScreen ? 'center' : 'space-between'}
-                    paddingBottom={isSmallScreen ? 1 : 0}
-                >
-                    <Typography variant="h5">{course.name}</Typography>
-                    <Typography variant="h6">ECTS: {course.ects}</Typography>
+        <>
+            <Head>
+                <title>Resumos LEI - {course.link}</title>
+                <meta name="viewport" content="width=device-width, initial-scale=0.80" />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            <Container>
+                <Box padding={6} display="flex" justifyContent="center">
+                    <Typography variant="h4">{course.name}</Typography>
                 </Box>
-                <Typography>{course.description}</Typography>
-                <Typography fontWeight="bold" fontSize={20}>Programa:</Typography>
-                <List disablePadding sx={{ listStyle: "decimal", pl: 4 }}>
-                    {course.program.map((value, index) => (
-                        <ListItem disablePadding sx={{ display: "list-item" }} key={index}>{value}</ListItem>
-                    ))}
-                </List>
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-                {/* Content for 'Objectivos' */}
-                <Typography>No final desta unidade curricular o estudante terá adquirido conhecimentos, aptidões e competências que lhe permitam:</Typography>
-                <List disablePadding sx={{ listStyle: "inside", pl: 2 }}>
-                    {course.objectives.map((value, index) => (
-                        <ListItem disablePadding sx={{ display: "list-item" }} key={index}>{value}</ListItem>
-                    ))}
-                </List>
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-                {/* Content for 'Requisitos' */}
-                <Typography>{course.requirements}</Typography>
-            </TabPanel>
-            <TabPanel value={value} index={3}>
-                {course.pdfs.length === 0 ? (
-                    <Box display="flex" justifyContent="center" alignItems="center" minHeight="200px">
-                        <Typography variant="h6" color="textSecondary">
-                            Sem ficheiros para esta cadeira
-                        </Typography>
+                <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                    <Tabs value={value} onChange={handleChange}>
+                        <Tab label="Informação Geral" />
+                        <Tab label="Objectivos" />
+                        <Tab label="Requisitos" />
+                        <Tab label="Resumos" />
+                    </Tabs>
+                </Box>
+                <TabPanel value={value} index={0}>
+                    {/* Content for 'Informação Geral' */}
+                    <Box
+                        display="flex"
+                        flexDirection={isSmallScreen ? 'column' : 'row'}
+                        alignItems="center"
+                        textAlign={isSmallScreen ? 'center' : 'left'}
+                        justifyContent={isSmallScreen ? 'center' : 'space-between'}
+                        paddingBottom={isSmallScreen ? 1 : 0}
+                    >
+                        <Typography variant="h5">{course.name}</Typography>
+                        <Typography variant="h6">ECTS: {course.ects}</Typography>
                     </Box>
-                ) : (
-                    <>
-                        <Grid container spacing={2}>
-                            {currentFiles.map((pdf, index) => (
-                                <Grid size={{ xs: 6, sm: 4, md: 3, lg: 2.4 }} key={index}>
-                                    <Card sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
-                                        <CardMedia
-                                            component="img"
-                                            sx={{ paddingTop: "5%" }}
-                                            image="/pdf-placeholder.png" // Path to the placeholder image in public folder
-                                            alt={pdf.title}
-                                        />
-                                        <CardContent>
-                                            <Typography gutterBottom variant="h6">
-                                                {pdf.title}
-                                            </Typography>
-                                            <Typography gutterBottom variant="body1" color="textSecondary">
-                                                Autor: Jorge Fresco
-                                            </Typography>
-                                        </CardContent>
-                                        <CardActions>
-                                            <Box display="flex" justifyContent="center" width="100%">
-                                                <Button
-                                                    size="small"
-                                                    href={pdf.url}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    download
-                                                >
-                                                    Download
-                                                </Button>
-                                            </Box>
-                                        </CardActions>
-                                    </Card>
-                                </Grid>
-                            ))}
-                        </Grid>
-
-                        {/* Pagination (only display if there are files and more than one page) */}
-                        {course.pdfs.length > filesPerPage && (
-                            <Box display="flex" justifyContent="center" mt={4}>
-                                <Pagination
-                                    count={Math.ceil(course.pdfs.length / filesPerPage)}
-                                    page={currentPage}
-                                    onChange={handlePageChange}
-                                    color="primary"
-                                />
-                            </Box>
-                        )}
-                    </>
-                )}
-
-                {/* File upload section */}
-                <Box mt={4}>
-                    <Button variant="contained" color="primary" onClick={handleDialogOpen}>
-                        Instruções para submeter um ficheiro
-                    </Button>
-                </Box>
-            </TabPanel>
-
-            {/* Dialog for Upload Instructions */}
-            <Dialog open={openDialog} onClose={handleDialogClose}>
-                <DialogTitle>Instruções para submeter um ficheiro</DialogTitle>
-                <DialogContent>
-                    <DialogContentText>
-                        Para submeter um ficheiro para esta cadeira, por favor enviem um email para <Link color="text.link" href="mailto:resumoslei@gmail.com">resumoslei@gmail.com</Link> com as seguintes informações:
-                    </DialogContentText>
-                    <List>
-                        <ListItem>
-                            <Typography>
-                                <Typography component="span" fontWeight="bold">- Assunto: </Typography>
-                                Nome da Cadeira (e.g., {course.link})
-                            </Typography>
-                        </ListItem>
-                        <ListItem>
-                            <Typography>
-                                <Typography component="span" fontWeight="bold">- Corpo: </Typography>
-                                Podem incluir o vosso nome se desejarem que apareça no site ou outros comentários
-                                que achem relevantes
-                            </Typography>
-                        </ListItem>
-                        <ListItem>- Anexem o ficheiro que desejam adicionar à cadeira</ListItem>
+                    <Typography>{course.description}</Typography>
+                    <Typography fontWeight="bold" fontSize={20}>Programa:</Typography>
+                    <List disablePadding sx={{ listStyle: "decimal", pl: 4 }}>
+                        {course.program.map((value, index) => (
+                            <ListItem disablePadding sx={{ display: "list-item" }} key={index}>{value}</ListItem>
+                        ))}
                     </List>
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleDialogClose} color="primary">
-                        Fechar
-                    </Button>
-                </DialogActions>
-            </Dialog>
-        </Container>
+                </TabPanel>
+                <TabPanel value={value} index={1}>
+                    {/* Content for 'Objectivos' */}
+                    <Typography>No final desta unidade curricular o estudante terá adquirido conhecimentos, aptidões e competências que lhe permitam:</Typography>
+                    <List disablePadding sx={{ listStyle: "inside", pl: 2 }}>
+                        {course.objectives.map((value, index) => (
+                            <ListItem disablePadding sx={{ display: "list-item" }} key={index}>{value}</ListItem>
+                        ))}
+                    </List>
+                </TabPanel>
+                <TabPanel value={value} index={2}>
+                    {/* Content for 'Requisitos' */}
+                    <Typography>{course.requirements}</Typography>
+                </TabPanel>
+                <TabPanel value={value} index={3}>
+                    {course.pdfs.length === 0 ? (
+                        <Box display="flex" justifyContent="center" alignItems="center" minHeight="200px">
+                            <Typography variant="h6" color="textSecondary">
+                                Sem ficheiros para esta cadeira
+                            </Typography>
+                        </Box>
+                    ) : (
+                        <>
+                            <Grid container spacing={2}>
+                                {currentFiles.map((pdf, index) => (
+                                    <Grid size={{ xs: 6, sm: 4, md: 3, lg: 2.4 }} key={index}>
+                                        <Card sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
+                                            <CardMedia
+                                                component="img"
+                                                sx={{ paddingTop: "5%" }}
+                                                image="/pdf-placeholder.png" // Path to the placeholder image in public folder
+                                                alt={pdf.title}
+                                            />
+                                            <CardContent>
+                                                <Typography gutterBottom variant="h6">
+                                                    {pdf.title}
+                                                </Typography>
+                                                <Typography gutterBottom variant="body1" color="textSecondary">
+                                                    Autor: Jorge Fresco
+                                                </Typography>
+                                            </CardContent>
+                                            <CardActions>
+                                                <Box display="flex" justifyContent="center" width="100%">
+                                                    <Button
+                                                        size="small"
+                                                        href={pdf.url}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        download
+                                                    >
+                                                        Download
+                                                    </Button>
+                                                </Box>
+                                            </CardActions>
+                                        </Card>
+                                    </Grid>
+                                ))}
+                            </Grid>
+
+                            {/* Pagination (only display if there are files and more than one page) */}
+                            {course.pdfs.length > filesPerPage && (
+                                <Box display="flex" justifyContent="center" mt={4}>
+                                    <Pagination
+                                        count={Math.ceil(course.pdfs.length / filesPerPage)}
+                                        page={currentPage}
+                                        onChange={handlePageChange}
+                                        color="primary"
+                                    />
+                                </Box>
+                            )}
+                        </>
+                    )}
+
+                    {/* File upload section */}
+                    <Box mt={4}>
+                        <Button variant="contained" color="primary" onClick={handleDialogOpen}>
+                            Instruções para submeter um ficheiro
+                        </Button>
+                    </Box>
+                </TabPanel>
+
+                {/* Dialog for Upload Instructions */}
+                <Dialog open={openDialog} onClose={handleDialogClose}>
+                    <DialogTitle>Instruções para submeter um ficheiro</DialogTitle>
+                    <DialogContent>
+                        <DialogContentText>
+                            Para submeter um ficheiro para esta cadeira, por favor enviem um email para <Link color="text.link" href="mailto:resumoslei@gmail.com">resumoslei@gmail.com</Link> com as seguintes informações:
+                        </DialogContentText>
+                        <List>
+                            <ListItem>
+                                <Typography>
+                                    <Typography component="span" fontWeight="bold">- Assunto: </Typography>
+                                    Nome da Cadeira (e.g., {course.link})
+                                </Typography>
+                            </ListItem>
+                            <ListItem>
+                                <Typography>
+                                    <Typography component="span" fontWeight="bold">- Corpo: </Typography>
+                                    Podem incluir o vosso nome se desejarem que apareça no site ou outros comentários
+                                    que achem relevantes
+                                </Typography>
+                            </ListItem>
+                            <ListItem>- Anexem o ficheiro que desejam adicionar à cadeira</ListItem>
+                        </List>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={handleDialogClose} color="primary">
+                            Fechar
+                        </Button>
+                    </DialogActions>
+                </Dialog>
+            </Container>
+        </>
     );
 }
 

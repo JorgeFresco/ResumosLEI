@@ -6,7 +6,7 @@ export default function About() {
     return (
         <>
             <Head>
-                <title>Resumos LEI</title>
+                <title>Resumos LEI - Sobre</title>
                 <meta name="viewport" content="width=device-width, initial-scale=0.80"/>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
