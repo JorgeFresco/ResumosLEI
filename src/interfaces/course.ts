@@ -1,3 +1,5 @@
+import Pdf from "@/interfaces/pdf";
+
 type Course = {
     name: string
     acronym: string
@@ -10,6 +12,7 @@ type Course = {
     image: string
     color: string
     long?: boolean
+    pdfs: Pdf[]
 }
 
 export default Course

@@ -31,7 +31,7 @@ const Home: React.FC<Props> = ({ allYears }) => {
                 <Typography variant="h3" align="center" color="textPrimary" gutterBottom sx={{ fontWeight: "bold" }}>
                     Resumos LEI
                 </Typography>
-                <Typography variant="h6" align="center" color="textSecondary" paragraph>
+                <Typography variant="h6" align="center" color="textSecondary">
                     Bem-vindo ao site comunitário de resumos de LEI.
                 </Typography>
             </Container>

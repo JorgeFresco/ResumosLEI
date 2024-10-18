@@ -32,7 +32,8 @@
               ],
               "link": "AM-I",
               "image": "assets/am1.svg",
-              "color": "#139cd6"
+              "color": "#139cd6",
+              "pdfs": []
             },
             {
               "name": "Álgebra Linear e Geometria Analítica",
@@ -59,7 +60,8 @@
               ],
               "link": "ALGA",
               "image": "assets/alga.svg",
-              "color": "#d92316"
+              "color": "#d92316",
+              "pdfs": []
             },
             {
               "name": "Introdução à Programação",
@@ -95,7 +97,8 @@
               ],
               "link": "IP",
               "image": "assets/ip.svg",
-              "color": "#cf7617"
+              "color": "#cf7617",
+              "pdfs": []
             },
             {
               "name": "Sistemas Lógicos",
@@ -125,7 +128,8 @@
               ],
               "link": "SL",
               "image": "assets/sl.svg",
-              "color": "#12c733"
+              "color": "#12c733",
+              "pdfs": []
             }
           ]
         },
@@ -142,7 +146,8 @@
               "program": [],
               "link": "AM-II",
               "image": "assets/am2.svg",
-              "color": "#1082b3"
+              "color": "#1082b3",
+              "pdfs": []
             },
             {
               "name": "Arquitetura de Computadores",
@@ -154,7 +159,8 @@
               "program": [],
               "link": "AC",
               "image": "assets/ac.svg",
-              "color": "#0fa82b"
+              "color": "#0fa82b",
+              "pdfs": []
             },
             {
               "name": "Matemática Discreta",
@@ -166,7 +172,8 @@
               "program": [],
               "link": "MD",
               "image": "assets/md.svg",
-              "color": "#b31e14"
+              "color": "#b31e14",
+              "pdfs": []
             },
             {
               "name": "Programação Orientada pelos Objetos",
@@ -178,7 +185,8 @@
               "program": [],
               "link": "POO",
               "image": "assets/poo.svg",
-              "color": "#b56714"
+              "color": "#b56714",
+              "pdfs": []
             }
           ]
         },
@@ -196,7 +204,8 @@
               "link": "CTCT",
               "image": "assets/ctct.svg",
               "color": "#5e5c5c",
-              "long": true
+              "long": true,
+              "pdfs": []
             }
           ]
         }
@@ -218,7 +227,8 @@
               "program": [],
               "link": "AED",
               "image": "assets/aed.svg",
-              "color": "#a65e12"
+              "color": "#a65e12",
+              "pdfs": []
             },
             {
               "name": "Física",
@@ -230,7 +240,8 @@
               "program": [],
               "link": "Fis",
               "image": "assets/fis.svg",
-              "color": "#b513d6"
+              "color": "#b513d6",
+              "pdfs": []
             },
             {
               "name": "Fundamentos de Sistemas de Operação",
@@ -242,7 +253,8 @@
               "program": [],
               "link": "FSO",
               "image": "assets/fso.svg",
-              "color": "#0e9927"
+              "color": "#0e9927",
+              "pdfs": []
             },
             {
               "name": "Lógica Computacional",
@@ -254,7 +266,8 @@
               "program": [],
               "link": "LC",
               "image": "assets/lc.svg",
-              "color": "#13d6b2"
+              "color": "#13d6b2",
+              "pdfs": []
             }
           ]
         },
@@ -271,7 +284,8 @@
               "program": [],
               "link": "BD",
               "image": "assets/bd.svg",
-              "color": "#a2d613"
+              "color": "#a2d613",
+              "pdfs": []
             },
             {
               "name": "Linguagens e Ambientes de Programação",
@@ -283,7 +297,8 @@
               "program": [],
               "link": "LAP",
               "image": "assets/lap.svg",
-              "color": "#965511"
+              "color": "#965511",
+              "pdfs": []
             },
             {
               "name": "Probabilidades e Estatística D",
@@ -295,7 +310,8 @@
               "program": [],
               "link": "PE-D",
               "image": "assets/ped.svg",
-              "color": "#0f77a3"
+              "color": "#0f77a3",
+              "pdfs": []
             },
             {
               "name": "Teoria da Computação",
@@ -307,7 +323,8 @@
               "program": [],
               "link": "TC",
               "image": "assets/tc.svg",
-              "color": "#10ad90"
+              "color": "#10ad90",
+              "pdfs": []
             }
           ]
         },
@@ -325,7 +342,8 @@
               "link": "SSTD",
               "image": "assets/sstd.svg",
               "color": "#474747",
-              "long": true
+              "long": true,
+              "pdfs": []
             }
           ]
         }
@@ -347,7 +365,8 @@
               "program": [],
               "link": "CGI",
               "image": "assets/cgi.svg",
-              "color": "#bd5117"
+              "color": "#bd5117",
+              "pdfs": []
             },
             {
               "name": "Engenharia de Software",
@@ -359,7 +378,8 @@
               "program": [],
               "link": "ES",
               "image": "assets/es.svg",
-              "color": "#db25ba"
+              "color": "#db25ba",
+              "pdfs": []
             },
             {
               "name": "Inteligência Artificial",
@@ -371,7 +391,8 @@
               "program": [],
               "link": "IA",
               "image": "assets/ia.svg",
-              "color": "#cdd618"
+              "color": "#cdd618",
+              "pdfs": []
             },
             {
               "name": "Redes de Computadores",
@@ -383,7 +404,8 @@
               "program": [],
               "link": "RC",
               "image": "assets/rc.svg",
-              "color": "#0b7a1f"
+              "color": "#0b7a1f",
+              "pdfs": []
             }
           ]
         },
@@ -400,7 +422,8 @@
               "program": [],
               "link": "ADA",
               "image": "assets/ada.svg",
-              "color": "#78440d"
+              "color": "#78440d",
+              "pdfs": []
             },
             {
               "name": "Sistemas Distribuídos",
@@ -412,7 +435,8 @@
               "program": [],
               "link": "SD",
               "image": "assets/sd.svg",
-              "color": "#5d9e0e"
+              "color": "#5d9e0e",
+              "pdfs": []
             },
             {
               "name": "Atividade de Desenvolvimento Curricular",
@@ -424,7 +448,8 @@
               "program": [],
               "link": "ADC",
               "image": "assets/adc.svg",
-              "color": "#333333"
+              "color": "#333333",
+              "pdfs": []
             }
           ]
         },
@@ -442,7 +467,8 @@
               "link": "PI",
               "image": "assets/pi.svg",
               "color": "#333333",
-              "long": true
+              "long": true,
+              "pdfs": []
             }
           ]
         }

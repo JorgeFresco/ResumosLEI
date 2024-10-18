@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import CoursePage from '@/components/CoursePage';
+// @ts-ignore
 import Course from '@/interfaces/course';
 import { getAllYears, getCourseByLink } from '@/lib/api';
 import { ParsedUrlQuery } from 'querystring';
