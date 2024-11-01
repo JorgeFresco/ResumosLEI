@@ -96,7 +96,8 @@ function CoursePage({ course }: CoursePageProps) {
                         <Tab label="Informação Geral" />
                         <Tab label="Objectivos" />
                         <Tab label="Requisitos" />
-                        <Tab label="Resumos" />
+                        <Tab label="Ficheiros" />
+                        <Tab label="Médias" />
                     </Tabs>
                 </Box>
                 <TabPanel value={value} index={0}>
@@ -134,6 +135,7 @@ function CoursePage({ course }: CoursePageProps) {
                     <Typography>{course.requirements}</Typography>
                 </TabPanel>
                 <TabPanel value={value} index={3}>
+                    {/* Content for 'Ficheiros' */}
                     {course.pdfs.length === 0 ? (
                         <Box display="flex" justifyContent="center" alignItems="center" minHeight="200px">
                             <Typography variant="h6" color="textSecondary">
@@ -198,6 +200,25 @@ function CoursePage({ course }: CoursePageProps) {
                             Instruções para submeter um ficheiro
                         </Button>
                     </Box>
+                </TabPanel>
+                <TabPanel value={value} index={4}>
+                    <Typography>
+                        <Typography component="span" fontWeight="bold">Média Global:</Typography>
+                    </Typography>
+                    <Typography>
+                        <Typography component="span" fontWeight="bold">Média Por Ano:</Typography>
+                    </Typography>
+                    <List>
+                        <ListItem>
+                            <Typography component="span" fontWeight="bold">2024:</Typography>
+                        </ListItem>
+                        <ListItem>
+                            <Typography component="span" fontWeight="bold">2023:</Typography>
+                        </ListItem>
+                        <ListItem>
+                            <Typography component="span" fontWeight="bold">2022:</Typography>
+                        </ListItem>
+                    </List>
                 </TabPanel>
 
                 {/* Dialog for Upload Instructions */}
