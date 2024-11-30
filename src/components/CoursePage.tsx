@@ -10,21 +10,18 @@ import {
     useMediaQuery,
     Button,
     Pagination,
-    Card,
-    CardMedia,
-    CardContent,
-    CardActions,
     Dialog,
     DialogActions,
     DialogContent,
     DialogContentText,
-    DialogTitle, Link
+    DialogTitle, Link,
 } from "@mui/material";
 import Grid from '@mui/material/Grid2';
 import React, {SyntheticEvent, useState} from "react";
 import { useTheme } from "@mui/system";
 import Course from "@/interfaces/course";
 import Head from "next/head";
+import PDFCard from "@/components/PDFCard";
 
 type CoursePageProps = {
     course: Course;
@@ -95,7 +92,7 @@ function CoursePage({ course }: CoursePageProps) {
                     <Tabs value={value} onChange={handleChange}>
                         <Tab label="Informação Geral" />
                         <Tab label="Objectivos" />
-                        <Tab label="Requisitos" />
+                        <Tab label="Requisitos Prévios" />
                         <Tab label="Ficheiros" />
                         <Tab label="Médias" />
                     </Tabs>
@@ -104,29 +101,29 @@ function CoursePage({ course }: CoursePageProps) {
                     {/* Content for 'Informação Geral' */}
                     <Box
                         display="flex"
-                        flexDirection={isSmallScreen ? 'column' : 'row'}
+                        flexDirection={isExtraSmallScreen ? 'column' : 'row'}
                         alignItems="center"
-                        textAlign={isSmallScreen ? 'center' : 'left'}
-                        justifyContent={isSmallScreen ? 'center' : 'space-between'}
-                        paddingBottom={isSmallScreen ? 1 : 0}
+                        textAlign={isExtraSmallScreen ? 'center' : 'left'}
+                        justifyContent={isExtraSmallScreen ? 'center' : 'space-between'}
+                        paddingBottom={isExtraSmallScreen ? 1 : 0}
                     >
                         <Typography variant="h5">{course.name}</Typography>
                         <Typography variant="h6">ECTS: {course.ects}</Typography>
                     </Box>
-                    <Typography>{course.description}</Typography>
+                    <Typography gutterBottom>{course.description}</Typography>
                     <Typography fontWeight="bold" fontSize={20}>Programa:</Typography>
-                    <List disablePadding sx={{ listStyle: "decimal", pl: 4 }}>
+                    <List disablePadding dense sx={{ listStyle: "decimal", pl: 4 }}>
                         {course.program.map((value, index) => (
-                            <ListItem disablePadding sx={{ display: "list-item" }} key={index}>{value}</ListItem>
+                            <ListItem disableGutters sx={{ display: "list-item" }} key={index}>{value}</ListItem>
                         ))}
                     </List>
                 </TabPanel>
                 <TabPanel value={value} index={1}>
                     {/* Content for 'Objectivos' */}
                     <Typography>No final desta unidade curricular o estudante terá adquirido conhecimentos, aptidões e competências que lhe permitam:</Typography>
-                    <List disablePadding sx={{ listStyle: "inside", pl: 2 }}>
+                    <List dense sx={{ listStyle: "inside", pl: 2 }}>
                         {course.objectives.map((value, index) => (
-                            <ListItem disablePadding sx={{ display: "list-item" }} key={index}>{value}</ListItem>
+                            <ListItem disableGutters sx={{ display: "list-item" }} key={index}>{value}</ListItem>
                         ))}
                     </List>
                 </TabPanel>
@@ -147,35 +144,7 @@ function CoursePage({ course }: CoursePageProps) {
                             <Grid container spacing={2}>
                                 {currentFiles.map((pdf, index) => (
                                     <Grid size={{ xs: 6, sm: 4, md: 3, lg: 2.4 }} key={index}>
-                                        <Card sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
-                                            <CardMedia
-                                                component="img"
-                                                sx={{ paddingTop: "5%" }}
-                                                image="/pdf-placeholder.png" // Path to the placeholder image in public folder
-                                                alt={pdf.title}
-                                            />
-                                            <CardContent>
-                                                <Typography gutterBottom variant="h6">
-                                                    {pdf.title}
-                                                </Typography>
-                                                <Typography gutterBottom variant="body1" color="textSecondary">
-                                                    Autor: Jorge Fresco
-                                                </Typography>
-                                            </CardContent>
-                                            <CardActions>
-                                                <Box display="flex" justifyContent="center" width="100%">
-                                                    <Button
-                                                        size="small"
-                                                        href={pdf.url}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        download
-                                                    >
-                                                        Download
-                                                    </Button>
-                                                </Box>
-                                            </CardActions>
-                                        </Card>
+                                        <PDFCard pdf={pdf} />
                                     </Grid>
                                 ))}
                             </Grid>

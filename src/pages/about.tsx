@@ -33,7 +33,7 @@ export default function About() {
                         Algum do conteúdo neste site pode estar incorreto, incompleto e/ou desatualizado, por isso tenham sempre atenção e confirmem a informação antes de assumirem que está tudo correto.
                     </Typography>
                     <Typography variant="body1" color="textSecondary" align="center" >
-                        Em caso de qualquer dúvida ou erro que encontrem, podem enviar email para <Link color="text.link" href="mailto:resumoslei@gmail.com">resumoslei@gmail.com</Link>.
+                        Em caso de qualquer dúvida, sugestão ou erro que encontrem, podem enviar email para <Link color="text.link" href="mailto:resumoslei@gmail.com">resumoslei@gmail.com</Link>.
                     </Typography>
                 </Paper>
             </Container>
