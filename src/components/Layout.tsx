@@ -26,21 +26,13 @@ export default function Layout({children}: HomePageLayoutProps) {
     const router = useRouter();
     const [mode, setMode] = useState<PaletteMode>("dark");
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
-    const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorElNav(event.currentTarget);
     };
-    const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorElUser(event.currentTarget);
-    };
 
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
-    };
-
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
     };
 
     const colorMode = useMemo(
@@ -109,6 +101,9 @@ export default function Layout({children}: HomePageLayoutProps) {
                                     <MenuItem onClick={handleCloseNavMenu}>
                                         <Button sx={{color: "text.link", transition: "color 0s", display: "block"}} onClick={() => router.push("/about")}>Sobre</Button>
                                     </MenuItem>
+                                    <MenuItem onClick={handleCloseNavMenu}>
+                                        <Button sx={{color: "text.link", transition: "color 0s", display: "block"}} onClick={() => router.push("/road-map")}>Planos</Button>
+                                    </MenuItem>
                                 </Menu>
                             </Box>
                             <Typography
@@ -126,6 +121,7 @@ export default function Layout({children}: HomePageLayoutProps) {
                             </Typography>
                             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                                 <Button sx={{color: "text.link", transition: "color 0s", display: "block"}} onClick={() => router.push("/about")}>Sobre</Button>
+                                <Button sx={{color: "text.link", transition: "color 0s", display: "block"}} onClick={() => router.push("/road-map")}>Planos</Button>
                             </Box>
 
                             <Box sx={{ flexGrow: 0 }}>
