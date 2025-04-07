@@ -14,7 +14,7 @@ import {
     DialogActions,
     DialogContent,
     DialogContentText,
-    DialogTitle, Link,
+    DialogTitle, Link, Card, CardContent,
 } from "@mui/material";
 import Grid from '@mui/material/Grid2';
 import React, {SyntheticEvent, useState} from "react";
@@ -91,7 +91,6 @@ function CoursePage({ course }: CoursePageProps) {
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <Tabs value={value} onChange={handleChange}>
                         <Tab label="Informação Geral" />
-                        <Tab label="Objectivos" />
                         <Tab label="Requisitos Prévios" />
                         <Tab label="Ficheiros" />
                         <Tab label="Médias" />
@@ -110,28 +109,29 @@ function CoursePage({ course }: CoursePageProps) {
                         <Typography variant="h5">{course.name}</Typography>
                         <Typography variant="h6">ECTS: {course.ects}</Typography>
                     </Box>
-                    <Typography gutterBottom>{course.description}</Typography>
-                    <Typography fontWeight="bold" fontSize={20}>Programa:</Typography>
-                    <List disablePadding dense sx={{ listStyle: "decimal", pl: 4 }}>
-                        {course.program.map((value, index) => (
-                            <ListItem disableGutters sx={{ display: "list-item" }} key={index}>{value}</ListItem>
-                        ))}
-                    </List>
+                    <Typography gutterBottom marginBottom={5}>{course.description}</Typography>
+                    {
+                        course.program.length > 0 && (
+                            <>
+                                <Card sx={{ borderLeft: `5px solid ${course.color}`, boxShadow: 2 }}>
+                                    <CardContent>
+                                        <Typography fontWeight="bold" fontSize={20}>Programa:</Typography>
+                                        <List disablePadding dense sx={{ listStyle: "decimal", pl: 4 }}>
+                                            {course.program.map((value, index) => (
+                                                <ListItem disableGutters sx={{ display: "list-item" }} key={index}>{value}</ListItem>
+                                            ))}
+                                        </List>
+                                    </CardContent>
+                                </Card>
+                            </>
+                        )
+                    }
                 </TabPanel>
                 <TabPanel value={value} index={1}>
-                    {/* Content for 'Objectivos' */}
-                    <Typography>No final desta unidade curricular o estudante terá adquirido conhecimentos, aptidões e competências que lhe permitam:</Typography>
-                    <List dense sx={{ listStyle: "inside", pl: 2 }}>
-                        {course.objectives.map((value, index) => (
-                            <ListItem disableGutters sx={{ display: "list-item" }} key={index}>{value}</ListItem>
-                        ))}
-                    </List>
-                </TabPanel>
-                <TabPanel value={value} index={2}>
                     {/* Content for 'Requisitos' */}
                     <Typography>{course.requirements}</Typography>
                 </TabPanel>
-                <TabPanel value={value} index={3}>
+                <TabPanel value={value} index={2}>
                     {/* Content for 'Ficheiros' */}
                     {course.pdfs.length === 0 ? (
                         <Box display="flex" justifyContent="center" alignItems="center" minHeight="200px">
@@ -170,24 +170,41 @@ function CoursePage({ course }: CoursePageProps) {
                         </Button>
                     </Box>
                 </TabPanel>
-                <TabPanel value={value} index={4}>
-                    <Typography>
-                        <Typography component="span" fontWeight="bold">Média Global:</Typography>
-                    </Typography>
-                    <Typography>
-                        <Typography component="span" fontWeight="bold">Média Por Ano:</Typography>
-                    </Typography>
-                    <List>
-                        <ListItem>
-                            <Typography component="span" fontWeight="bold">2024:</Typography>
-                        </ListItem>
-                        <ListItem>
-                            <Typography component="span" fontWeight="bold">2023:</Typography>
-                        </ListItem>
-                        <ListItem>
-                            <Typography component="span" fontWeight="bold">2022:</Typography>
-                        </ListItem>
-                    </List>
+                <TabPanel value={value} index={3}>
+                    {
+                        course.average_grades && course.average_grades.length > 0 && (
+                            <>
+                                <Typography fontWeight="bold" fontSize={20} gutterBottom>
+                                    Média Por Ano:
+                                </Typography>
+                                <Grid container spacing={2}>
+                                    {course.average_grades.map((data, index) => (
+                                        <Grid size={{ xs: 12, md: 6}} key={index}>
+                                            <Card sx={{ borderLeft: `5px solid ${course.color}`, boxShadow: 2 }}>
+                                                <CardContent>
+                                                    <Typography variant="subtitle1" fontWeight="bold">
+                                                        {data.year}
+                                                    </Typography>
+                                                    <Typography variant="body2">
+                                                        <strong>Inscritos:</strong> {data.enrolled}
+                                                    </Typography>
+                                                    <Typography variant="body2">
+                                                        <strong>Média:</strong> {data.average}
+                                                    </Typography>
+                                                    <Typography variant="body2">
+                                                        <strong>Taxa de Reprovação:</strong> {data.failed}
+                                                    </Typography>
+                                                    <Typography variant="body2">
+                                                        <strong>Professor:</strong> {data.professor}
+                                                    </Typography>
+                                                </CardContent>
+                                            </Card>
+                                        </Grid>
+                                    ))}
+                                </Grid>
+                            </>
+                        )
+                    }
                 </TabPanel>
 
                 {/* Dialog for Upload Instructions */}

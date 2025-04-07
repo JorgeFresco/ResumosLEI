@@ -1,11 +1,11 @@
 import Pdf from "@/interfaces/pdf";
+import Average_Grade from "@/interfaces/average_grade";
 
 type Course = {
     name: string
     acronym: string
     ects: number
     description: string
-    objectives: string[]
     requirements: string
     program: string[]
     link: string
@@ -13,6 +13,7 @@ type Course = {
     color: string
     long?: boolean
     pdfs: Pdf[]
+    average_grades: Average_Grade[]
 }
 
 export default Course
