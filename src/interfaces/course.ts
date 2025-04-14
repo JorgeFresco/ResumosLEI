@@ -13,7 +13,7 @@ type Course = {
     color: string
     long?: boolean
     pdfs: Pdf[]
-    average_grades: Average_Grade[]
+    average_grades?: Average_Grade[]
 }
 
 export default Course
