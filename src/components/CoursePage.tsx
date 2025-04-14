@@ -195,7 +195,7 @@ function CoursePage({ course }: CoursePageProps) {
                                                         <strong>Taxa de Reprovação:</strong> {data.failed}
                                                     </Typography>
                                                     <Typography variant="body2">
-                                                        <strong>Professor:</strong> {data.professor}
+                                                        <strong>Professor(a):</strong> {data.professor}
                                                     </Typography>
                                                 </CardContent>
                                             </Card>
