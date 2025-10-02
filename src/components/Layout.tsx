@@ -102,7 +102,10 @@ export default function Layout({children}: HomePageLayoutProps) {
                                         <Button sx={{color: "text.link", transition: "color 0s", display: "block"}} onClick={() => router.push("/about")}>Sobre</Button>
                                     </MenuItem>
                                     <MenuItem onClick={handleCloseNavMenu}>
-                                        <Button sx={{color: "text.link", transition: "color 0s", display: "block"}} onClick={() => router.push("/road-map")}>Planos</Button>
+                                        <Button sx={{color: "text.link", transition: "color 0s", display: "block"}} onClick={() => router.push("/coming-soon")}>Mestrado</Button>
+                                    </MenuItem>
+                                    <MenuItem onClick={handleCloseNavMenu}>
+                                        <Button sx={{color: "text.link", transition: "color 0s", display: "block"}} onClick={() => router.push("/coming-soon")}>Campus</Button>
                                     </MenuItem>
                                 </Menu>
                             </Box>
@@ -121,7 +124,9 @@ export default function Layout({children}: HomePageLayoutProps) {
                             </Typography>
                             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                                 <Button sx={{color: "text.link", transition: "color 0s", display: "block"}} onClick={() => router.push("/about")}>Sobre</Button>
-                                <Button sx={{color: "text.link", transition: "color 0s", display: "block"}} onClick={() => router.push("/road-map")}>Planos</Button>
+                                <Button sx={{color: "text.link", transition: "color 0s", display: "block"}} onClick={() => router.push("/coming-soon")}>Mestrado</Button>
+                                <Button sx={{color: "text.link", transition: "color 0s", display: "block"}} onClick={() => router.push("/coming-soon")}>Campus</Button>
+
                             </Box>
 
                             <Box sx={{ flexGrow: 0 }}>

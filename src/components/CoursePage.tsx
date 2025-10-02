@@ -22,6 +22,8 @@ import { useTheme } from "@mui/system";
 import Course from "@/interfaces/course";
 import Head from "next/head";
 import PDFCard from "@/components/PDFCard";
+import AverageGrade from "@/interfaces/average_grade";
+import AvgGradeCard from "@/components/AvgGradeCard";
 
 type CoursePageProps = {
     course: Course;
@@ -178,27 +180,9 @@ function CoursePage({ course }: CoursePageProps) {
                                     Média Por Ano:
                                 </Typography>
                                 <Grid container spacing={2}>
-                                    {course.average_grades.map((data, index) => (
+                                    {course.average_grades.map((data: AverageGrade, index) => (
                                         <Grid size={{ xs: 12, md: 6}} key={index}>
-                                            <Card sx={{ borderLeft: `5px solid ${course.color}`, boxShadow: 2 }}>
-                                                <CardContent>
-                                                    <Typography variant="subtitle1" fontWeight="bold">
-                                                        {data.year}
-                                                    </Typography>
-                                                    <Typography variant="body2">
-                                                        <strong>Inscritos:</strong> {data.enrolled}
-                                                    </Typography>
-                                                    <Typography variant="body2">
-                                                        <strong>Média:</strong> {data.average}
-                                                    </Typography>
-                                                    <Typography variant="body2">
-                                                        <strong>Taxa de Reprovação:</strong> {data.failed}
-                                                    </Typography>
-                                                    <Typography variant="body2">
-                                                        <strong>Professor(a):</strong> {data.professor}
-                                                    </Typography>
-                                                </CardContent>
-                                            </Card>
+                                            <AvgGradeCard data={data} course={course}/>
                                         </Grid>
                                     ))}
                                 </Grid>

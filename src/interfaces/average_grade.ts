@@ -1,11 +1,11 @@
 
 
-type Average_Grade = {
+type AverageGrade = {
     year: number,
     enrolled: number,
-    average: string,
+    average: number,
     failed: string,
     professor: string
 }
 
-export default Average_Grade
+export default AverageGrade

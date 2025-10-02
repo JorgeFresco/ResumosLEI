@@ -27,35 +27,35 @@
                 {
                   "year": 2020,
                   "enrolled": 929,
-                  "average": "10,50",
+                  "average": 10.5,
                   "failed": "25,30%",
                   "professor": "José Gomes"
                 },
                 {
                   "year": 2021,
                   "enrolled": 964,
-                  "average": "8,04",
+                  "average": 8.04,
                   "failed": "52,07%",
                   "professor": "Ana Custódio"
                 },
                 {
                   "year": 2022,
                   "enrolled": 986,
-                  "average": "7,43",
+                  "average": 7.43,
                   "failed": "53,85%",
                   "professor": "Ana Custódio"
                 },
                 {
                   "year": 2023,
                   "enrolled": 985,
-                  "average": "Não foi possível calcular",
+                  "average": null,
                   "failed": "49,39%",
                   "professor": "Paula Amaral"
                 },
                 {
                   "year": 2024,
                   "enrolled": 852,
-                  "average": "7,34",
+                  "average": 7.34,
                   "failed": "53,99%",
                   "professor": "Paula Amaral"
                 }
@@ -87,6 +87,43 @@
                   "description": "Descrição longa e mais detalhada do ficheiro",
                   "url": "url/para/download"
                 }
+              ],
+              "average_grades": [
+                {
+                  "year": 2020,
+                  "enrolled": 1223,
+                  "average": 12.6,
+                  "failed": "9,81%",
+                  "professor": "Herberto Silva"
+                },
+                {
+                  "year": 2021,
+                  "enrolled": 915,
+                  "average": 7.89,
+                  "failed": "68,42%",
+                  "professor": "António Malheiro"
+                },
+                {
+                  "year": 2022,
+                  "enrolled": 919,
+                  "average": 9.53,
+                  "failed": "53,65%",
+                  "professor": "António Malheiro"
+                },
+                {
+                  "year": 2023,
+                  "enrolled": 1168,
+                  "average": 10.02,
+                  "failed": "44,86%",
+                  "professor": "António Malheiro"
+                },
+                {
+                  "year": 2024,
+                  "enrolled": 1004,
+                  "average": 10.01,
+                  "failed": "49,50%",
+                  "professor": "Isabel Cabral"
+                }
               ]
             },
             {
@@ -115,7 +152,44 @@
               "link": "IP",
               "image": "assets/ip.svg",
               "color": "#cf7617",
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": [
+                {
+                  "year": 2020,
+                  "enrolled": 166,
+                  "average": 11.66,
+                  "failed": "34,94%",
+                  "professor": "António Ravara"
+                },
+                {
+                  "year": 2021,
+                  "enrolled": 150,
+                  "average": 14.47,
+                  "failed": "14,67%",
+                  "professor": "Margarida Mamede"
+                },
+                {
+                  "year": 2022,
+                  "enrolled": 181,
+                  "average": 12.63,
+                  "failed": "24,31%",
+                  "professor": "Margarida Mamede"
+                },
+                {
+                  "year": 2023,
+                  "enrolled": 178,
+                  "average": 12.74,
+                  "failed": "21,91%",
+                  "professor": "Carla Ferreira"
+                },
+                {
+                  "year": 2024,
+                  "enrolled": 195,
+                  "average": 10.47,
+                  "failed": "38,46%",
+                  "professor": "Carla Ferreira"
+                }
+              ]
             },
             {
               "name": "Sistemas Lógicos",
@@ -137,7 +211,44 @@
               "link": "SL",
               "image": "assets/sl.svg",
               "color": "#12c733",
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": [
+                {
+                  "year": 2020,
+                  "enrolled": 209,
+                  "average": null,
+                  "failed": "31,58%",
+                  "professor": "Luís Gomes"
+                },
+                {
+                  "year": 2021,
+                  "enrolled": 213,
+                  "average": null,
+                  "failed": "30,52%",
+                  "professor": "Luís Gomes"
+                },
+                {
+                  "year": 2022,
+                  "enrolled": 214,
+                  "average": null,
+                  "failed": "33,18%",
+                  "professor": "Luís Gomes"
+                },
+                {
+                  "year": 2023,
+                  "enrolled": 267,
+                  "average": null,
+                  "failed": "38,95%",
+                  "professor": "Luís Gomes"
+                },
+                {
+                  "year": 2024,
+                  "enrolled": 240,
+                  "average": null,
+                  "failed": "30,00%",
+                  "professor": "Luís Gomes"
+                }
+              ]
             }
           ]
         },
@@ -180,7 +291,8 @@
               "link": "AC",
               "image": "assets/ac.svg",
               "color": "#0fa82b",
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": []
             },
             {
               "name": "Matemática Discreta",
@@ -201,7 +313,8 @@
               "link": "MD",
               "image": "assets/md.svg",
               "color": "#b31e14",
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": []
             },
             {
               "name": "Programação Orientada pelos Objetos",
@@ -224,7 +337,8 @@
               "link": "POO",
               "image": "assets/poo.svg",
               "color": "#b56714",
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": []
             }
           ]
         },
@@ -252,7 +366,8 @@
               "image": "assets/ctct.svg",
               "color": "#5e5c5c",
               "long": true,
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": []
             }
           ]
         }
@@ -280,7 +395,8 @@
               "link": "AED",
               "image": "assets/aed.svg",
               "color": "#a65e12",
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": []
             },
             {
               "name": "Física",
@@ -298,7 +414,8 @@
               "link": "Fis",
               "image": "assets/fis.svg",
               "color": "#b513d6",
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": []
             },
             {
               "name": "Fundamentos de Sistemas de Operação",
@@ -316,7 +433,8 @@
               "link": "FSO",
               "image": "assets/fso.svg",
               "color": "#0e9927",
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": []
             },
             {
               "name": "Lógica Computacional",
@@ -342,7 +460,8 @@
               "link": "LC",
               "image": "assets/lc.svg",
               "color": "#13d6b2",
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": []
             }
           ]
         },
@@ -367,7 +486,8 @@
               "link": "BD",
               "image": "assets/bd.svg",
               "color": "#a2d613",
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": []
             },
             {
               "name": "Linguagens e Ambientes de Programação",
@@ -388,7 +508,8 @@
               "link": "LAP",
               "image": "assets/lap.svg",
               "color": "#965511",
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": []
             },
             {
               "name": "Probabilidades e Estatística D",
@@ -412,7 +533,8 @@
               "link": "PE-D",
               "image": "assets/ped.svg",
               "color": "#0f77a3",
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": []
             },
             {
               "name": "Teoria da Computação",
@@ -428,7 +550,8 @@
               "link": "TC",
               "image": "assets/tc.svg",
               "color": "#10ad90",
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": []
             }
           ]
         },
@@ -450,7 +573,8 @@
               "image": "assets/sstd.svg",
               "color": "#474747",
               "long": true,
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": []
             }
           ]
         }
@@ -483,7 +607,8 @@
               "link": "CGI",
               "image": "assets/cgi.svg",
               "color": "#bd5117",
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": []
             },
             {
               "name": "Engenharia de Software",
@@ -504,7 +629,8 @@
               "link": "ES",
               "image": "assets/es.svg",
               "color": "#db25ba",
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": []
             },
             {
               "name": "Inteligência Artificial",
@@ -523,7 +649,8 @@
               "link": "IA",
               "image": "assets/ia.svg",
               "color": "#cdd618",
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": []
             },
             {
               "name": "Redes de Computadores",
@@ -545,7 +672,8 @@
               "link": "RC",
               "image": "assets/rc.svg",
               "color": "#0b7a1f",
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": []
             }
           ]
         },
@@ -572,7 +700,8 @@
               "link": "ADA",
               "image": "assets/ada.svg",
               "color": "#78440d",
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": []
             },
             {
               "name": "Sistemas Distribuídos",
@@ -596,7 +725,8 @@
               "link": "SD",
               "image": "assets/sd.svg",
               "color": "#5d9e0e",
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": []
             },
             {
               "name": "Atividade de Desenvolvimento Curricular",
@@ -617,7 +747,8 @@
               "link": "ADC",
               "image": "assets/adc.svg",
               "color": "#333333",
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": []
             }
           ]
         },
@@ -635,7 +766,8 @@
               "image": "assets/pi.svg",
               "color": "#333333",
               "long": true,
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": []
             }
           ]
         }
