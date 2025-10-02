@@ -3,7 +3,7 @@
 type AverageGrade = {
     year: number,
     enrolled: number,
-    average?: number,
+    average: number | null,
     failed: string,
     professor: string
 }
