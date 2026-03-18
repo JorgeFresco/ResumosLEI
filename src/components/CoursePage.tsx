@@ -19,7 +19,7 @@ import {
 import Grid from '@mui/material/Grid2';
 import React, {SyntheticEvent, useState} from "react";
 import { useTheme } from "@mui/system";
-import Course from "@/interfaces/course";
+import {Course} from "@/interfaces/course";
 import Head from "next/head";
 import PDFCard from "@/components/PDFCard";
 import AverageGrade from "@/interfaces/average_grade";
@@ -208,7 +208,7 @@ function CoursePage({ course }: CoursePageProps) {
                             <ListItem>
                                 <Typography>
                                     <Typography component="span" fontWeight="bold">- Corpo: </Typography>
-                                    Podem incluir o vosso nome se desejarem que apareça no site ou outros comentários
+                                    Podem incluir o vosso nome ou contacto se desejarem que apareça no site ou outros comentários
                                     que achem relevantes
                                 </Typography>
                             </ListItem>

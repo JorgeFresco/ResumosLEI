@@ -1,6 +1,6 @@
 import coursesData from '../courses.json';
 import Year from "@/interfaces/year";
-import Course from "@/interfaces/course";
+import {Course} from "@/interfaces/course";
 
 
 export function getAllYears(): Year[] {

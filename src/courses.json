@@ -85,6 +85,7 @@
                   "title": "Titulo do Ficheiro",
                   "author": "Jorge Fresco",
                   "description": "Descrição longa e mais detalhada do ficheiro",
+                  "date": "11/10/2025",
                   "url": "url/para/download"
                 }
               ],
@@ -271,7 +272,44 @@
               "link": "AM-II",
               "image": "assets/am2.svg",
               "color": "#1082b3",
-              "pdfs": []
+              "pdfs": [],
+              "average_grades": [
+                {
+                  "year": 2020,
+                  "enrolled": 148,
+                  "average": 11.01,
+                  "failed": "28,38%",
+                  "professor": "Jorge André"
+                },
+                {
+                  "year": 2021,
+                  "enrolled": 122,
+                  "average": 9.42,
+                  "failed": "27,87%",
+                  "professor": "Jorge André"
+                },
+                {
+                  "year": 2022,
+                  "enrolled": 126,
+                  "average": 9.41,
+                  "failed": "48,41%",
+                  "professor": "Jorge André"
+                },
+                {
+                  "year": 2023,
+                  "enrolled": 126,
+                  "average": 9.61,
+                  "failed": "31,11%",
+                  "professor": "Jorge André"
+                },
+                {
+                  "year": 2024,
+                  "enrolled": 223,
+                  "average": 9.05,
+                  "failed": "28,70%",
+                  "professor": "Jorge André"
+                }
+              ]
             },
             {
               "name": "Arquitetura de Computadores",
@@ -455,7 +493,6 @@
                 "Dedução natural da lógica de primeira ordem",
                 "Skolemização e unificação",
                 "Programação em Lógica - Prolog"
-
               ],
               "link": "LC",
               "image": "assets/lc.svg",

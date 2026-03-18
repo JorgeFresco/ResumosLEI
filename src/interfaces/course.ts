@@ -1,7 +1,7 @@
 import Pdf from "@/interfaces/pdf";
 import Average_Grade from "@/interfaces/average_grade";
 
-type Course = {
+export type Course = {
     name: string
     acronym: string
     ects: number
@@ -16,4 +16,3 @@ type Course = {
     average_grades?: Average_Grade[]
 }
 
-export default Course

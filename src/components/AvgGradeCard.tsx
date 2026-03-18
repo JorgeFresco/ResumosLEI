@@ -1,7 +1,7 @@
 import {Card, CardContent, Typography, Box, Tooltip} from "@mui/material";
 import React from "react";
 import AverageGrade from "@/interfaces/average_grade";
-import Course from "@/interfaces/course";
+import {Course} from "@/interfaces/course";
 import HelpIcon from '@mui/icons-material/Help';
 
 type AvgGradeCardProps = {

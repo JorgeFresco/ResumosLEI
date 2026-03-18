@@ -1,9 +1,8 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
+import {GetStaticPaths, GetStaticProps} from 'next';
 import CoursePage from '@/components/CoursePage';
-// @ts-ignore
-import Course from '@/interfaces/course';
-import { getAllYears, getCourseByLink } from '@/lib/api';
-import { ParsedUrlQuery } from 'querystring';
+import {Course} from '@/interfaces/course';
+import {getAllYears, getCourseByLink} from '@/lib/api';
+import {ParsedUrlQuery} from 'querystring';
 
 type CoursePageProps = {
     course: Course;
@@ -13,18 +12,17 @@ interface Params extends ParsedUrlQuery {
     link: string;
 }
 
-export default function Course({ course }: CoursePageProps) {
-    return <CoursePage course={course} />;
+export default function CourseLink({course}: CoursePageProps) {
+    return <CoursePage course={course}/>;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const allYears = getAllYears();
 
-    // Generate paths for all courses
     const paths = allYears.flatMap(year =>
         year.semesters.flatMap(semester =>
             semester.courses.map(course => ({
-                params: { link: course.link }
+                params: {link: course.link}
             }))
         )
     );
@@ -36,7 +34,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-    const { link } = context.params as Params;
+    const {link} = context.params as Params;
 
     // Fetch course data based on the link
     const course = getCourseByLink(link);
